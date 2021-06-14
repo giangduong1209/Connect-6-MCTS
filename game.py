@@ -19,7 +19,7 @@ def get_next_open_row(board, col):
 board = board_game()
 print(board)
 game_over = False
-turn = 0 
+turn = 0     
 while not game_over:
     if turn == 0:
         col = int(input("Player 1 make your selection (19,19): "))
@@ -33,7 +33,10 @@ while not game_over:
             row = get_next_open_row(board, col)
             drop_piece(board, row, col, 2)
         print(board)
-    turn += 1
-    turn = turn % 2
+    turn += 1 
+
+
+
+
 ##########################################################
 

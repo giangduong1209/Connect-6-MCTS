@@ -19,9 +19,9 @@ def get_next_open_row(board, col):
 board = board_game()
 print(board)
 game_over = False
-turn = 0     
+turn = 1    
 while not game_over:
-    if turn == 0:
+    if turn == 1:
         col = int(input("Player 1 make your selection (19,19): "))
         if is_valid_location(board, col):
             row = get_next_open_row(board, col)

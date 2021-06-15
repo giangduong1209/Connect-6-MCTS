@@ -26,7 +26,6 @@ def is_outta_range(x, y):
 
 class Referee:
 
-
     def __init__(self, initial_board):
         self.board = initial_board
         self.last_move = (0, 0)

@@ -1,7 +1,10 @@
 import numpy as np
 from collections import defaultdict
 from abc import ABC, abstractmethod
+from common import Point
 from board import *
+from player import *
+from state import *
 class MonteCarloTreeSearchNode(ABC):
     def __init__(self, state, parent= None):
         self.state = state
@@ -71,9 +74,25 @@ class TwoPlayersGameMonteCarloTreeSearchNode(MonteCarloTreeSearchNode):
         self._results[result] += 1.
         if self.parent:
             self.parent.backpropagate(result)
-def is_game_over(self):
-    won_player = self.referee.__check()
-    if won_player:
-        self.winner = won_player
-        return True
-    return False
+# def is_game_over(self):
+#     won_player = self.referee.__check()
+#     if won_player:
+#         self.winner = won_player
+#         return True
+#     return False
+# def do_enemy(self, point):
+#     self.player = 2
+#     self.last_enemy_moves.append(point)
+#     self.do(point)
+#     self.player = 1
+
+# def update_enemy_board(self, board, nth_move):
+#     self.nth_move = nth_move
+#     self.last_enemy_moves.clear()
+#     for y in range(19):
+#         for x in range(19):
+#             if self.board[y][x] != board[y][x]:
+#                 point = Point(x,y)
+#                 self.do_enemy(point)
+#     self.player = 1
+#     self.turn_count = 0

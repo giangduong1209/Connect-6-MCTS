@@ -88,7 +88,3 @@ class Board:
     def __init__(self):
         self.__clearBoard()
         self.winPlayer = "Draw"
-
-if __name__=='__main__':
-    b = Board()
-    print(b)

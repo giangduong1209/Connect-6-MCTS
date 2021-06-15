@@ -1,7 +1,7 @@
 import numpy as np
 from collections import defaultdict
 from abc import ABC, abstractmethod
-
+from board import *
 class MonteCarloTreeSearchNode(ABC):
     def __init__(self, state, parent= None):
         self.state = state
@@ -71,3 +71,9 @@ class TwoPlayersGameMonteCarloTreeSearchNode(MonteCarloTreeSearchNode):
         self._results[result] += 1.
         if self.parent:
             self.parent.backpropagate(result)
+def is_game_over(self):
+    won_player = self.referee.__check()
+    if won_player:
+        self.winner = won_player
+        return True
+    return False

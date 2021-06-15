@@ -102,8 +102,3 @@ if __name__ == '__main__':
         
 
     print("%s won" % board.winPlayer)
-
-
-# if __name__=='__main__':
-#     b = Board()
-#     print(b)

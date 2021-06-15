@@ -25,11 +25,11 @@ class Board:
     def __str__(self):
         def stone(i):
             if i == B:
-                return "o"
+                return "O"
             elif i == W:
-                return "x"
+                return "X"
             elif i == Empty:
-                return "0"
+                return "."
             else:
                 return "+"
 

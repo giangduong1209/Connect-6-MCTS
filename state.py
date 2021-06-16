@@ -1,4 +1,5 @@
 import numpy as np
+from player import *
 class Connect6State():
     def game_result(self):
         # check if game is over
@@ -70,3 +71,4 @@ class Connect6State():
             Connect6State(coords[0], coords[1], self.next_to_move)
             for coords in list(zip(indices[0], indices[1]))
         ]
+    def next_state(self):

@@ -1,6 +1,11 @@
 import numpy as np
 from player import *
+from board import *
 class Connect6State():
+    def __init__(self, state, next_to_move=1):
+        self.board = state
+        self.board_size = Board
+        self.next_to_move = next_to_move
     def game_result(self):
         # check if game is over
         rowsum = np.sum(self.board, 0)
@@ -71,4 +76,3 @@ class Connect6State():
             Connect6State(coords[0], coords[1], self.next_to_move)
             for coords in list(zip(indices[0], indices[1]))
         ]
-    def next_state(self):

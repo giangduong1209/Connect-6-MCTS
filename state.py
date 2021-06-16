@@ -7,33 +7,11 @@ class Connect6State():
         self.board_size = Board
         self.next_to_move = next_to_move
     def game_result(self):
-        # check if game is over
-        rowsum = np.sum(self.board, 0)
-        colsum = np.sum(self.board, 1)
-        diag_sum_tl = self.board.trace()
-        diag_sum_tr = self.board[::-1].trace()
-
-        player_one_wins = any(rowsum == self.board_size)
-        player_one_wins += any(colsum == self.board_size)
-        player_one_wins += (diag_sum_tl == self.board_size)
-        player_one_wins += (diag_sum_tr == self.board_size)
-
-        if player_one_wins:
-            return self.x
-
-        player_two_wins = any(rowsum == -self.board_size)
-        player_two_wins += any(colsum == -self.board_size)
-        player_two_wins += (diag_sum_tl == -self.board_size)
-        player_two_wins += (diag_sum_tr == -self.board_size)
-
-        if player_two_wins:
-            return self.o
-
-        if np.all(self.board != 0):
-            return 0.
-
-        # if not over - no result
-        return None
+        won_player = self.referee.__check()
+        if won_player:
+            self.winner = won_player
+            return True
+        return False
 
     def is_game_over(self):
         return self.game_result is not None

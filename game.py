@@ -98,6 +98,7 @@ if __name__ == '__main__':
     while not game.isOver():
         game.step()
         print("\n")
+        print('       A B C D E F G H I J K L M N O P Q R S ')
         print(board)
         
 

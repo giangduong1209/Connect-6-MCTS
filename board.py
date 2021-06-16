@@ -25,16 +25,35 @@ class Board:
     def __str__(self):
         def stone(i):
             if i == B:
-                return "O"
-            elif i == W:
                 return "X"
+            elif i == W:
+                return "O"
             elif i == Empty:
                 return "."
             else:
                 return "+"
 
-        return "\n".join(["".join([stone(j) for j in i]) for i in self.board])
-
+        # return "\n".join([" ".join([stone(j) for j in i]) for i in self.board])
+        b = []
+        t = 1
+        for i in self.board:
+            l = []
+            if self.board.index(i) != 0 and self.board.index(i) != 20: 
+                if t < 10:
+                    l.append("   " + str(t))
+                else:
+                    l.append("  " + str(t))
+                t += 1
+                for j in i:
+                    l.append(stone(j))
+                b.append(" ".join(l))
+            else:
+                l.append("    ")
+                for j in i:
+                    l.append(stone(j))
+                b.append(" ".join(l))
+        return "\n".join(b)
+            
     def __check(self, line):
         b = Edge
         n = 0

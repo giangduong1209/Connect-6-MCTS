@@ -54,4 +54,6 @@ class Connect6State():
             Connect6State(coords[0], coords[1], self.next_to_move)
             for coords in list(zip(indices[0], indices[1]))
         ]
-
+    def next_state(self, move):
+        if(move != 0):
+            return 

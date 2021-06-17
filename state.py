@@ -57,7 +57,8 @@ class Connect6State():
         ]
     def next_state(self, move):
         if(move != 0):
-            return 
+            state = self.SwapPlayer()
+        return state
     def SwapPlayer(self, constant: Constant):
         self.SetPlayer(constant.Opponent(Player))
     

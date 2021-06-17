@@ -8,12 +8,12 @@ class Connect6State():
         self.board_size = Board
         self.next_to_move = next_to_move
     def game_result(self):
-        won_player = self.referee.__check()
-        if won_player:
-            self.winner = won_player
-            return True
-        return False
-
+        # won_player = self.referee.__check()
+        # if won_player:
+        #     self.winner = won_player
+        #     return True
+        # return False
+        return (self.board.isFull() or self.board.isGameOver())
     def is_game_over(self):
         return self.game_result is not None
 

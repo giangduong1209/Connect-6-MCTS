@@ -1,6 +1,7 @@
 import numpy as np
 from player import *
 from board import *
+from constant import Constant
 class Connect6State():
     def __init__(self, state, next_to_move=1):
         self.board = state
@@ -57,3 +58,9 @@ class Connect6State():
     def next_state(self, move):
         if(move != 0):
             return 
+    def SwapPlayer(self, constant: Constant):
+        self.SetPlayer(constant.Opponent(Player))
+    
+    def SetPlayer(self, player):
+        self.legalmove = self.get_legal_actions(player)
+

@@ -1,6 +1,6 @@
 from board import SIZE, B, W, Empty, Edge
 import random
-import mcts
+from mcts import MCTS
 class Player:
     def __init__(self, stone):
         self.stone = stone
@@ -11,6 +11,8 @@ class Player:
 
     def move(self, board):
         raise NotImplementedError
+
+mcts = MCTS
 
 class RandomPlayer(Player):
     def collectEmpty(self, board):

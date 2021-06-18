@@ -1,5 +1,11 @@
+from typing_extensions import ParamSpec
+# from constant import Constant
+
 SIZE = 21
 B, W, Empty, Edge = 1, -1, 0, 2
+
+# const = Constant()
+
 
 class Board:
 
@@ -14,6 +20,18 @@ class Board:
             if self.__check(i):
                 return True
         return False
+
+    def getLegalMove(self, player):
+        moves = None
+        # oppenentPi = self.board[const.Opponent]
+        pass
+
+    def move(self):
+        pass
+
+
+    def isLegalMove(self, player, bitMove):
+        pass
 
     def __clearBoard(self):
         self.board = [[Empty for i in range(SIZE)] for j in range(SIZE)]

@@ -12,7 +12,7 @@ class Player:
     def move(self, board):
         raise NotImplementedError
 
-# mcts = MCTS
+# mcts = MCTS()
 
 class RandomPlayer(Player):
     def collectEmpty(self, board):

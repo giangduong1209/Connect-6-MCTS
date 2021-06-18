@@ -1,10 +1,10 @@
-from typing_extensions import ParamSpec
-# from constant import Constant
+# from typing_extensions import ParamSpec
+import constant
 
 SIZE = 21
 B, W, Empty, Edge = 1, -1, 0, 2
 
-# const = Constant()
+
 
 
 class Board:
@@ -23,8 +23,8 @@ class Board:
 
     def getLegalMove(self, player):
         moves = None
-        # oppenentPi = self.board[const.Opponent]
-        pass
+        oppenentPi = self.board[constant.Opponent(player)]
+    
 
     def move(self):
         pass

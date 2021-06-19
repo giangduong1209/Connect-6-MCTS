@@ -1,4 +1,7 @@
+from board import *
 import numpy as np 
+SIZE = 21
+B, W, EMPTY, EDGE = 1, -1, 0, 2
 class Constant:
     def __init__(self, player):
         self.player = player

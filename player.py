@@ -7,7 +7,7 @@ class Player:
 		self.opponent = - stone
 
 	def first_move(self):
-		return (10, 10)
+		return (int(input("Row:")), int(input("Column:")))
 
 	def move(self, board):
 		raise NotImplementedError
@@ -18,14 +18,11 @@ class Player:
 class RandomPlayer(Player):
 	def move(self, board):
 		empty = self.collectEmpty(board)
-		print(empty)
 		candidates = random.sample(empty, 2)
-		print(candidates)
 		return candidates
 		
 class HumanPlayer(Player):
 	def move(self, board):
 		empty = self.collectEmpty(board)
-		print(empty)
-		candidates = ([int(input("Row 1:")),int(input("Column 1:"))], [int(input("Row 2:")),int(input("Column 2:"))])
+		candidates = ([int(input("Row:")),int(input("Column:"))], [int(input("Row:")),int(input("Column:"))])
 		return candidates
